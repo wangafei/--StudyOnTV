@@ -1,0 +1,18 @@
+# 编译中间产物（含临时截图、诊断页面、未签名 APK 等）
+build/
+
+# apksigner 生成的 v4 签名中间文件
+*.idsig
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp

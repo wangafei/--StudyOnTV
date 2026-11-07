@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>题了个题 · StudyOnTV</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stage">
+
+  <!-- ========== 首页 ========== -->
+  <section id="home" class="screen is-active">
+    <div class="home-top">
+      <div class="brand">
+        <div class="brand-mark">题</div>
+        <div class="brand-text">
+          <h1>题了个题</h1>
+          <p id="subline">StudyOnTV · 4 岁启蒙</p>
+        </div>
+      </div>
+      <div class="stars-total"><span data-emo="⭐"></span><b id="totalStars">0</b></div>
+    </div>
+
+    <div class="home-main">
+      <button id="startBtn" class="btn-primary focusable">
+        <span class="btn-emoji" data-emo="🚀"></span>
+        <span class="btn-text"><b>开始答题</b><i>随机 10 题</i></span>
+      </button>
+      <div class="cats" id="cats"></div>
+
+      <div class="guard-bar">
+        <div class="guard-info">
+          <span class="guard-badge">护</span>
+          <span class="guard-txt"><b>看电视守护</b><i id="guardStatus">开启中 · 看满 5 分钟答 1 题</i></span>
+        </div>
+        <div class="guard-actions">
+          <button id="guardToggleBtn" class="guard-btn focusable">关闭守护</button>
+          <button id="guardTestBtn" class="guard-btn ghost focusable">试一次</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="hint">遥控器 ← → 选择 &nbsp;·&nbsp; 按 OK 确认 &nbsp;·&nbsp; 菜单键可关闭守护</p>
+  </section>
+
+  <!-- ========== 答题 ========== -->
+  <section id="quiz" class="screen">
+    <header class="q-head">
+      <span class="pill" id="qCat">颜色</span>
+      <span class="dots" id="qDots"></span>
+      <span class="pill ghost" id="qCount">1 / 10</span>
+    </header>
+
+    <div class="guard-banner" id="guardBanner">
+      看了一会儿电视啦，答对这一题就能继续看
+      <small>家长：按遥控器「菜单键」或「返回键」可跳过 / 暂停 / 关闭守护</small>
+    </div>
+
+    <div class="q-body">
+      <h2 class="q-title" id="qTitle"></h2>
+      <div class="q-big" id="qBig"></div>
+      <div class="options" id="options"></div>
+    </div>
+
+    <p class="hint" id="quizHint">← → 选一选 &nbsp;·&nbsp; ↑ 再听一遍 &nbsp;·&nbsp; OK 确定</p>
+    <div class="toast" id="toast"></div>
+  </section>
+
+  <!-- ========== 结算 ========== -->
+  <section id="result" class="screen">
+    <div class="result-card">
+      <div class="result-emoji" id="rEmoji" data-emo="🏆"></div>
+      <h2 id="rTitle">太厉害了！</h2>
+      <p class="result-stars" id="rStars"></p>
+      <p class="result-sub" id="rSub"></p>
+      <div class="result-actions">
+        <button id="againBtn" class="btn-primary small focusable">再来一轮</button>
+        <button id="homeBtn" class="btn-ghost focusable">回首页</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 家长面板（守护弹出时按菜单键 / 返回键） ========== -->
+  <div class="parent-panel" id="parentPanel">
+    <div class="parent-card">
+      <h2>家长选项</h2>
+      <p>不想被打扰？可以跳过这一次，或临时关掉守护</p>
+      <div class="parent-actions">
+        <button class="parent-btn focusable" data-act="skip">跳过这一次，继续看</button>
+        <button class="parent-btn focusable" data-act="snooze">暂停守护 1 小时（大人看片）</button>
+        <button class="parent-btn danger focusable" data-act="off">彻底关闭守护（不再弹题）</button>
+      </div>
+      <p class="parent-tip">按返回键可收起面板，继续答题</p>
+    </div>
+  </div>
+
+</div>
+<script src="questions.js"></script>
+<script src="emoji_map.js"></script>
+<script src="voice_map.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
